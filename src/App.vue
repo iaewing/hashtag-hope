@@ -28,7 +28,17 @@
               })
             ]
           })
-        ]
+        , 
+        new QuestionModel({
+          title:'Location',
+          type: QuestionType.Dropdown,
+          options: [
+            new ChoiceOption({
+              value: 'Canada',
+              value: 'United States of America'
+            })
+          ]
+        })]
       }
     }
   }
