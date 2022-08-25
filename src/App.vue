@@ -1,12 +1,11 @@
 <template>
-  <p>Hashtag Hope</p>
+  <HeaderComponent/>
   <div>
-  <router-view/>
+    <router-view/>
   </div>
 </template>
 
-<script>
-</script>
+<script setup>
+import HeaderComponent from "@/components/HeaderComponent";
 
-<style>
-</style>
+</script>

@@ -1,12 +1,12 @@
-import { createRouter, createWebHashHistory } from "vue-router";
-import HelloWorld from '@/components/HelloWorld'
+import {createRouter, createWebHashHistory} from "vue-router";
+import HomeView from '@/views/HomeView'
 import ResourcesForm from '@/components/ResourcesForm'
-import TestComponent from "@/components/TestComponent";
+import TwitchInfo from "@/components/TwitchInfo";
 
 const routes = [
-    {path: '/', component: HelloWorld},
+    {path: '/', component: HomeView},
     {path: '/resources', component: ResourcesForm},
-    {path: '/test', component: TestComponent}
+    {path: '/twitch', component: TwitchInfo}
 ]
 
 const router = createRouter({
