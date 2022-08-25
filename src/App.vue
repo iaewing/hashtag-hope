@@ -5,7 +5,6 @@
   </div>
 </template>
 
-<script setup>
-import HeaderComponent from "@/components/HeaderComponent";
-
+<script setup lang="ts">
+import HeaderComponent from "@/components/HeaderComponent.vue";
 </script>
