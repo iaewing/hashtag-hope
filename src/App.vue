@@ -1,26 +1,44 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <flow-form v-bind:questions="questions" v-bind:language="language" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  // Import necessary components and classes
+  import { FlowForm, QuestionModel, QuestionType, ChoiceOption, LanguageModel } from '@ditdot-dev/vue-flow-form'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'exampleComponent',
+    components: {
+      FlowForm
+    },
+    data() {
+      return {
+        language: new LanguageModel({
+          // Your language definitions here (optional).
+          // You can leave out this prop if you want to use the default definitions.
+        }),
+        questions: [
+          // QuestionModel array
+          new QuestionModel({
+            title: 'Question',
+            type: QuestionType.MultipleChoice,
+            options: [
+              new ChoiceOption({
+                label: 'Answer'
+              })
+            ]
+          })
+        ]
+      }
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  /* Import Vue Flow Form base CSS */
+  @import '~@ditdot-dev/vue-flow-form/dist/vue-flow-form.css';
+  /* Import one of the Vue Flow Form CSS themes (optional) */
+  @import '~@ditdot-dev/vue-flow-form/dist/vue-flow-form.theme-minimal.css';
+  /* @import '~@ditdot-dev/vue-flow-form/dist/vue-flow-form.theme-green.css'; */
+  /* @import '~@ditdot-dev/vue-flow-form/dist/vue-flow-form.theme-purple.css'; */
 </style>
